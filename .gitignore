@@ -411,8 +411,5 @@ $RECYCLE.BIN/
 # Community repositories are referenced through reports and notices.
 /research_papers/godot_ai_plugins/sources/
 
-# Keep paper analyses in Git; obtain the original PDFs from their cited sources.
-/research_papers/agent_debugging/**/*.pdf
-
 # Generated extraction and scratch artifacts.
 /tmp/

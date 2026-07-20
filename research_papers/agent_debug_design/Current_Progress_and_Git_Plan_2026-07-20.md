@@ -158,12 +158,13 @@ player.gd → player.tscn → main.tscn
 
 | 路径 | 理由 |
 |---|---|
-| `.gitignore` | 防止大型上游仓库、PDF 和临时产物误提交 |
+| `.gitignore` | 防止大型上游仓库和临时产物误提交 |
 | `modules/agent_debugger/**` | 引擎模块源码、注册、构建配置、fixtures 与单元测试 |
 | `agent_research_projects/README.md` | 实验项目来源、固定 commit 和工作区纪律 |
 | `agent_research_projects/tools/*.gd` | 可重复执行的 Artifact、Semantic、Fault、Incremental、Runtime CLI |
 | `research_papers/agent_debug_design/*.md` | 协议、Schema、实施步骤和验证记录 |
 | `research_papers/**/*.md` | 自有研究分析、总体方案和社区调研 |
+| `research_papers/agent_debugging/**/*.pdf` | 保留原始论文证据，支持离线复查和后续 Agent 分析；公开分发前仍需核对各论文授权 |
 | `research_papers/godot_ai_plugins/THIRD_PARTY_NOTICES.md` | 第三方来源与许可证记录 |
 
 ### 不应追踪
@@ -173,7 +174,6 @@ player.gd → player.tscn → main.tscn
 | `bin/`、`bin/obj/` | 可重建二进制和目标文件，Godot 已默认忽略 |
 | `agent_research_projects/upstream/` | 约 366 MB 的独立 Git 仓库，应由固定 URL/commit 重建 |
 | `research_papers/godot_ai_plugins/sources/` | 社区项目的独立 Git 快照，不应嵌入主仓库 |
-| `research_papers/agent_debugging/**/*.pdf` | 原始论文体积与再分发风险；提交分析和引用即可 |
 | `tmp/` | PDF 文本提取等临时产物 |
 | Demo `.godot/` | Godot 导入缓存，已由上游 `.gitignore` 忽略 |
 | `*.agent_contract.exe` | 独立验证构建产物，已由根仓库 `bin/` 规则忽略 |
