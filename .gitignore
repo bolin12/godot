@@ -396,3 +396,23 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 *.generated.props
+
+######################
+### Agent research ###
+######################
+
+# Pinned third-party repositories are local read-only research inputs.
+/agent_research_projects/upstream/
+
+# Episode worktrees and raw run outputs are reproducible workspace data.
+/agent_research_projects/worktrees/
+/agent_research_projects/episodes/
+
+# Community repositories are referenced through reports and notices.
+/research_papers/godot_ai_plugins/sources/
+
+# Keep paper analyses in Git; obtain the original PDFs from their cited sources.
+/research_papers/agent_debugging/**/*.pdf
+
+# Generated extraction and scratch artifacts.
+/tmp/

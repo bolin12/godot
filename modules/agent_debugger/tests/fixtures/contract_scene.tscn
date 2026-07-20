@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[node name="Root" type="Node" groups=["contract_fixture"]]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]

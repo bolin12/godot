@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+Import("env")
+Import("env_modules")
+
+env_agent_debugger = env_modules.Clone()
+module_obj = []
+
+if env_agent_debugger.debug_features:
+    env_agent_debugger.add_source_files(module_obj, "*.cpp")
+    env_agent_debugger.add_source_files(module_obj, "artifact/*.cpp")
+    env_agent_debugger.add_source_files(module_obj, "trace/*.cpp")
+    env_agent_debugger.add_source_files(module_obj, "causal/*.cpp")
+    env_agent_debugger.add_source_files(module_obj, "validation/*.cpp")
+
+env.modules_sources += module_obj
