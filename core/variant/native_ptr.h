@@ -30,11 +30,12 @@
 
 #pragma once
 
-#include "core/math/audio_frame.h"
 #include "core/variant/method_ptrcall.h"
 #include "core/variant/type_info.h"
 #include "core/variant/variant_caster.h"
 #include "core/variant/variant_internal.h"
+
+struct AudioFrame;
 
 // Metafunction for pointee name. Specialized in GDVIRTUAL_NATIVE_PTR; takes into account const; falls back to "void".
 template <typename T>
@@ -75,8 +76,8 @@ struct GDExtensionPtr {
 
 template <typename T>
 struct GetTypeInfo<GDExtensionPtr<T>> {
-	static const Variant::Type VARIANT_TYPE = Variant::INT;
-	static const GodotTypeInfo::Metadata METADATA = GodotTypeInfo::METADATA_NONE;
+	static constexpr Variant::Type VARIANT_TYPE = Variant::INT;
+	static constexpr GodotTypeInfo::Metadata METADATA = GodotTypeInfo::METADATA_NONE;
 	static inline PropertyInfo get_class_info() {
 		return PropertyInfo(Variant::INT, String(), PROPERTY_HINT_INT_IS_POINTER, GDExtensionPtr<T>::get_name());
 	}
